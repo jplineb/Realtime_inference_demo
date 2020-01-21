@@ -59,4 +59,8 @@ def create_graph (aroftups):
     
     
 if __name__ == "__main__":
+    video_path = './test_video.mp4'
+    model_path = './model_path'
+    model_preds = livevideoinference(video_path, model_path)
+    create_graph(model_preds)
     
