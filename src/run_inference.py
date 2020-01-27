@@ -81,8 +81,9 @@ def databasevideoinfernce(filepaths, model):
     
   return(all_inf)
 
-### graph function for output of tuples
-## Graph predictions vs frames
+
+### Graph predictions vs frames
+  ## Single use case
 def create_graph (aroftups):
     x_val = [x[0] for x in aroftups]
     y_val = [x[1] for x in aroftups]
@@ -92,7 +93,8 @@ def create_graph (aroftups):
     # plot
     plt.plot(x_val,y_val)
     plt.show()
-## Graph subplots of mutiple predictions
+    
+  ## Graph subplots of mutiple predictions
 def create_suplots(all_inferences):
     fig = plt.figure(figsize=(40,40))
     am_of_plts = len(all_inf)
@@ -121,6 +123,6 @@ if __name__ == "__main__":
     all_inf=[]
     model = torch.load('/content/drive/My Drive/FASTAI /Realtime_demo/test_model_v2.pt')
     model.eval()
-    model_preds = livevideoinference(video_path, model_path)
+    model_preds = livevideoinference(video_path, model)
     create_graph(model_preds)
     
